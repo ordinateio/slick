@@ -1,0 +1,111 @@
+
+@use "../../src/Slick";
+
+body {
+  margin: 0;
+  background: #ffffff;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+article {
+  color: #444444;
+  width: 100vw;
+  min-width: 320px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  width: 960px;
+  margin: auto;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+
+  @media (max-width: 960px) {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+%description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  padding: 15px;
+  background: rgba(#000, .5);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Slider. */
+.slider {
+  margin: 0 0 10px;
+
+  img {
+    max-width: calc(100vw - 20px);
+  }
+
+  .description {
+    @extend %description;
+
+    strong {
+      font: 22px "Arial";
+      color: #ffffff;
+      margin: 0 0 10px;
+    }
+
+    span {
+      font: 16px "Arial";
+      color: #ffffff;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .slick-arrow {
+      visibility: hidden;
+    }
+
+    .description {
+      strong {
+        font-size: 18px;
+      }
+
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .description {
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+}
+
+/* Carousel. */
+.carousel {
+  .item {
+    margin: 0 5px;
+
+    .description {
+      @extend %description;
+
+      span {
+        font: 16px "Arial";
+        color: #ffffff;
+        text-align: center;
+      }
+    }
+  }
+}
