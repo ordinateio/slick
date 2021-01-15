@@ -29,6 +29,7 @@
     "@types/slick-carousel": "^1.6.34",
     "autoprefixer": "^10.0.4",
     "css-loader": "^5.0.1",
+    "cssnano": "^4.1.10",
     "postcss-loader": "^4.0.1",
     "rimraf": "^3.0.2",
     "sass": "^1.32.4",
