@@ -1,5 +1,6 @@
 import "slick-carousel";
-export declare type SlickProperties = JQuerySlickOptions;
+export interface SlickProperties extends JQuerySlickOptions {
+}
 /**
  * Adaptation for Slick.
  * Slider and carousel presets with support for additional animations.
