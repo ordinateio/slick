@@ -4,6 +4,16 @@ export interface SlickProperties extends JQuerySlickOptions {
 /**
  * Adaptation for Slick.
  * Slider and carousel presets with support for additional animations.
+ *
+ * @see slider
+ * @see carousel
+ *
+ * Slick:
+ * [Github]{@link https://github.com/callisto2410/modstrap-slick}
+ *
+ * Slick Carousel:
+ * [Github]{@link https://github.com/kenwheeler/slick}
+ * [Homepage]{@link https://kenwheeler.github.io/slick/}
  */
 export declare class Slick {
     /**
