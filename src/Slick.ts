@@ -13,7 +13,7 @@ export interface SlickProperties extends JQuerySlickOptions {
  * Slick:
  * [Github]{@link https://github.com/callisto2410/modstrap-slick}
  *
- * Slick Carousel:
+ * Slick-carousel:
  * [Github]{@link https://github.com/kenwheeler/slick}
  * [Homepage]{@link https://kenwheeler.github.io/slick/}
  */
