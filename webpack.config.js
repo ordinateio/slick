@@ -2,7 +2,7 @@ const Path = require("path");
 const Webpack = require("webpack");
 const TerserPlugin = require("terser-webpack-plugin");
 
-const WP = {
+const WPack = {
     mode: "production",
     devtool: "source-map",
     performance: {
@@ -19,7 +19,7 @@ const WP = {
     },
 };
 
-WP.plugins = [
+WPack.plugins = [
     new Webpack.ProvidePlugin({
         $: "jquery",
         jQuery: "jquery",
@@ -27,7 +27,7 @@ WP.plugins = [
     }),
 ];
 
-WP.optimization = {
+WPack.optimization = {
     minimize: true,
     minimizer: [
         new TerserPlugin({
@@ -51,7 +51,7 @@ WP.optimization = {
     },
 };
 
-WP.module = {
+WPack.module = {
     rules: [
         {
             test: /\.scss$/,
@@ -92,8 +92,8 @@ WP.module = {
     ],
 };
 
-WP.resolve = {
+WPack.resolve = {
     extensions: [".ts", ".js"],
 };
 
-module.exports = WP;
+module.exports = WPack;
