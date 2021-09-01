@@ -1,6 +1,6 @@
-import "./index.scss";
+import './index.scss';
 
-import Slick from "../../src/intex";
+import {Slick} from '../../src/intex';
 
-Slick.slider(".slider");
-Slick.carousel(".carousel");
+Slick.slider('.slider');
+Slick.carousel('.carousel');

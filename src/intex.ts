@@ -1,4 +1,4 @@
-import "slick-carousel";
+import 'slick-carousel';
 
 export interface SlickProperties extends JQuerySlickOptions {
 }
@@ -33,10 +33,10 @@ export class Slick {
         slidesToShow: 1,
         slidesToScroll: 1,
         speed: 600,
-        prevArrow: "<div class='slick-prev'></div>",
-        nextArrow: "<div class='slick-next'></div>",
+        prevArrow: '<div class="slick-prev"></div>',
+        nextArrow: '<div class="slick-next"></div>',
         rows: 0,
-    }
+    };
 
     /**
      * Default settings.
@@ -47,7 +47,7 @@ export class Slick {
         this._defaults = {
             ...this._defaults,
             ...properties,
-        }
+        };
     }
 
     /**
@@ -57,7 +57,7 @@ export class Slick {
      */
     static _sliderDefaults: SlickProperties = {
         fade: false,
-    }
+    };
 
     /**
      * Default settings for the slider.
@@ -68,7 +68,7 @@ export class Slick {
         this._sliderDefaults = {
             ...this._sliderDefaults,
             ...properties,
-        }
+        };
     }
 
     /**
@@ -78,7 +78,7 @@ export class Slick {
      */
     private static _carouselDefaults: SlickProperties = {
         speed: 300,
-    }
+    };
 
     /**
      * Default settings for the carousel.
@@ -89,7 +89,7 @@ export class Slick {
         this._carouselDefaults = {
             ...this._carouselDefaults,
             ...properties,
-        }
+        };
     }
 
     /**
@@ -135,15 +135,15 @@ export class Slick {
      * @private
      */
     private static setEvents(element: JQuery<HTMLElement>): void {
-        element.on("init", () => {
-            const selector = ".slick-current [data-slick-animation]";
+        element.on('init', () => {
+            const selector = '.slick-current [data-slick-animation]';
             const $elements = element.find(selector);
 
             this.toggleAnimation($elements);
         });
 
-        element.on("beforeChange", (event: JQuery.TriggeredEvent, slick: JQuerySlick, currentSlide: number, nextSlide: number) => {
-            const selector = `[data-slick-index="${nextSlide}"] [data-slick-animation]`;
+        element.on('beforeChange', (event: JQuery.TriggeredEvent, slick: JQuerySlick, currentSlide: number, nextSlide: number) => {
+            const selector = `[data-slick-index='${nextSlide}'] [data-slick-animation]`;
             const $elements = element.find(selector);
 
             this.toggleAnimation($elements);
@@ -159,21 +159,20 @@ export class Slick {
     private static toggleAnimation(elements: JQuery<HTMLElement>): void {
         for (const element of elements) {
             const animate = [
-                "animate__animated",
-                "animate__" + element.getAttribute("data-slick-animation"),
+                'animate__animated',
+                'animate__' + element.getAttribute('data-slick-animation'),
             ];
-            const delay = element.getAttribute("data-slick-animation-delay") ?? this._defaults.speed + "ms";
-            const duration = element.getAttribute("data-slick-animation-duration") ?? this._defaults.speed + "ms";
+            const delay = element.getAttribute('data-slick-animation-delay') ?? this._defaults.speed + 'ms';
+            let duration: string;
+            duration = element.getAttribute('data-slick-animation-duration') ?? this._defaults.speed + 'ms';
 
             element.style.animationDelay = delay;
             element.style.animationDuration = duration;
             element.classList.add(...animate);
 
-            element.addEventListener("animationend", () => element.classList.remove(...animate), {
+            element.addEventListener('animationend', () => element.classList.remove(...animate), {
                 once: true,
             });
         }
     }
 }
-
-export default Slick;
