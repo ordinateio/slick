@@ -43,7 +43,7 @@ export class Slick {
      *
      * @param properties
      */
-    public static set defaults(properties: SlickProperties) {
+    static set defaults(properties: SlickProperties) {
         this._defaults = {
             ...this._defaults,
             ...properties,
@@ -55,7 +55,7 @@ export class Slick {
      *
      * @private
      */
-    private static _sliderDefaults: SlickProperties = {
+    static _sliderDefaults: SlickProperties = {
         fade: false,
     }
 
@@ -64,7 +64,7 @@ export class Slick {
      *
      * @param properties
      */
-    public static set sliderDefaults(properties: SlickProperties) {
+    static set sliderDefaults(properties: SlickProperties) {
         this._sliderDefaults = {
             ...this._sliderDefaults,
             ...properties,
@@ -85,7 +85,7 @@ export class Slick {
      *
      * @param properties
      */
-    public static set carouselDefaults(properties: SlickProperties) {
+    static set carouselDefaults(properties: SlickProperties) {
         this._carouselDefaults = {
             ...this._carouselDefaults,
             ...properties,
@@ -98,7 +98,7 @@ export class Slick {
      * @param selector
      * @param properties
      */
-    public static slider(selector: string, properties?: Partial<SlickProperties>): void {
+    static slider(selector: string, properties?: Partial<SlickProperties>): void {
         const $element = $(selector);
 
         this.setEvents($element);
@@ -116,7 +116,7 @@ export class Slick {
      * @param selector
      * @param properties
      */
-    public static carousel(selector: string, properties?: Partial<SlickProperties>): void {
+    static carousel(selector: string, properties?: Partial<SlickProperties>): void {
         const $element = $(selector);
 
         this.setEvents($element);
