@@ -1,6 +1,5 @@
 const Path = require("path");
 const Webpack = require("webpack");
-const TerserPlugin = require("terser-webpack-plugin");
 
 const WPack = {
     mode: "production",
@@ -8,10 +7,10 @@ const WPack = {
     performance: {
         hints: false,
     },
-    entry: Path.resolve(__dirname, "demo", "src", "index.ts"),
+    entry: Path.resolve(__dirname, "demo/src/index.ts"),
     output: {
         filename: "[name].js",
-        path: Path.resolve(__dirname, "demo", "dist"),
+        path: Path.resolve(__dirname, "demo/assets"),
     },
     cache: {
         type: "filesystem",
@@ -19,6 +18,7 @@ const WPack = {
     },
 };
 
+// noinspection JSUnresolvedFunction
 WPack.plugins = [
     new Webpack.ProvidePlugin({
         $: "jquery",
@@ -29,23 +29,12 @@ WPack.plugins = [
 
 WPack.optimization = {
     minimize: true,
-    minimizer: [
-        new TerserPlugin({
-            terserOptions: {
-                format: {
-                    comments: false,
-                },
-            },
-            extractComments: false,
-            parallel: true,
-        }),
-    ],
     splitChunks: {
         cacheGroups: {
             vendor: {
                 test: /[\\/]node_modules[\\/]/,
-                name: 'vendor',
-                chunks: 'all',
+                name: "vendor",
+                chunks: "all",
             },
         },
     },
@@ -54,25 +43,21 @@ WPack.optimization = {
 WPack.module = {
     rules: [
         {
+            test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
+            type: "asset",
+        },
+        {
             test: /\.scss$/,
             use: [
                 "style-loader",
-                {
-                    loader: "css-loader",
-                    options: {
-                        sourceMap: false,
-                        url: false,
-                    }
-                },
+                "css-loader",
                 {
                     loader: "postcss-loader",
                     options: {
                         postcssOptions: {
                             plugins: {
                                 autoprefixer: {},
-                                cssnano: {
-                                    preset: ["default", {discardComments: {removeAll: true}}]
-                                },
+                                cssnano: {preset: ["default", {discardComments: {removeAll: true}}]},
                             },
                         },
                     },
