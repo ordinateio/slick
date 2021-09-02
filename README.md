@@ -1,26 +1,17 @@
-# modstrap-slick
-
-Adaptation for Slick. 
+# Slick
 
 Slider and carousel presets with support for additional animations.
 
 ## Installation
-
-To install a specific version:
-```shell script
-npm i https://github.com/ordinateio/modstrap-slick.git#v1.0.0
 ```
-
-To install the current version:
-```shell script
-npm i https://github.com/callisto2410/modstrap-slick.git
+npm install --save-dev @ordinateio/slick
 ```
-
 ## Usage
 
 TypeScript
 ```ts
-import Slick from "@modstrap/slick";
+import Slick from '@ordinateio/slick';
 
-Slick.slider(".slider");
+let slick = new Slick();
+slick.slider('.slider');
 ```
