@@ -1,12 +1,10 @@
-@use '../../src/index';
-
 body {
     margin: 0;
     background: #ffffff;
-}
 
-body * {
-    box-sizing: border-box;
+    * {
+        box-sizing: border-box;
+    }
 }
 
 article {
@@ -23,7 +21,7 @@ article {
     width: 960px;
     margin: auto;
     padding: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
 
     @media (max-width: 960px) {
         width: 100%;
@@ -38,6 +36,7 @@ article {
     width: 100%;
     padding: 15px;
     background: rgba(#000, .5);
+    backdrop-filter: blur(5px);
     display: flex;
     flex-direction: column;
 }
@@ -46,22 +45,24 @@ article {
 .slider {
     margin: 0 0 10px;
 
-    img {
-        max-width: calc(100vw - 20px);
-    }
-
-    .description {
-        @extend %description;
-
-        strong {
-            font: 22px 'Arial';
-            color: #ffffff;
-            margin: 0 0 10px;
+    &__item {
+        img {
+            max-width: calc(100vw - 20px);
         }
 
-        span {
-            font: 16px 'Arial';
-            color: #ffffff;
+        &-description {
+            @extend %description;
+
+            strong {
+                font: 22px 'Arial';
+                color: #ffffff;
+                margin: 0 0 10px;
+            }
+
+            span {
+                font: 16px 'Arial';
+                color: #ffffff;
+            }
         }
     }
 
@@ -70,33 +71,37 @@ article {
             visibility: hidden;
         }
 
-        .description {
-            strong {
-                font-size: 18px;
-            }
+        &__item {
+            &-description {
+                strong {
+                    font-size: 18px;
+                }
 
-            span {
-                font-size: 13px;
+                span {
+                    font-size: 13px;
+                }
             }
         }
     }
 
     @media (max-width: 600px) {
-        .description {
-            height: 100%;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+        &__item {
+            &-description {
+                height: 100%;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
         }
     }
 }
 
 /* Carousel. */
 .carousel {
-    .item {
+    &__item {
         margin: 0 5px;
 
-        .description {
+        &-description {
             @extend %description;
 
             span {

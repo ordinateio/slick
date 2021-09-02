@@ -1,6 +1,6 @@
 # Slick
 
-Slider and carousel presets with support for additional animations.
+Slider and carousel preset with additional animations.
 
 ## Installation
 ```
@@ -10,7 +10,8 @@ npm install --save-dev @ordinateio/slick
 
 TypeScript
 ```ts
-import Slick from '@ordinateio/slick';
+import '@ordinateio/slick/dist/index.css';
+import {Slick} from '@ordinateio/slick';
 
 let slick = new Slick();
 slick.slider('.slider');

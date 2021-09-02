@@ -1,20 +1,28 @@
 {
-  "name": "@modstrap/slick",
+  "name": "@ordinateio/slick",
   "version": "1.0.0",
   "description": "Adaptation for Slick.",
-  "main": "dist/Slick.js",
-  "types": "dist/Slick.d.ts",
-  "style": "dist/Slick.css",
-  "author": "Callisto (https://github.com/callisto2410)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "style": "dist/index.css",
+  "files": [
+    "dist/**/*"
+  ],
+  "author": "Ordinate IO (https://github.com/ordinateio)",
   "license": "MIT",
-  "homepage": "https://github.com/callisto2410/modstrap-slick",
+  "homepage": "https://github.com/ordinateio/slick",
   "bugs": {
-    "url": "https://github.com/callisto2410/modstrap-slick/issues"
+    "url": "https://github.com/ordinateio/slick/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/callisto2410/modstrap-slick.git"
+    "url": "git+https://github.com/ordinateio/slick.git"
   },
+  "keywords": [
+    "front-end",
+    "ui",
+    "typescript"
+  ],
   "scripts": {
     "build": "npm run clean && npm run build:dist && npm run build:dev",
     "build:dist": "tsc --project tsconfig.json && sass --no-source-map src/index.scss dist/index.css",

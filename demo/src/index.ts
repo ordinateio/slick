@@ -1,6 +1,11 @@
+import 'animate.css';
+
 import './index.scss';
 
-import {Slick} from '../../src/intex';
+import '../../src/index.scss';
+import {Slick} from '../../src';
 
-Slick.slider('.slider');
-Slick.carousel('.carousel');
+let slick = new Slick();
+
+slick.slider('.slider');
+slick.carousel('.carousel', {dots: true});
