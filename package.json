@@ -1,7 +1,7 @@
 {
   "name": "@ordinateio/slick",
   "version": "1.0.0",
-  "description": "Adaptation for Slick.",
+  "description": "Slider and carousel preset with additional animations.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "style": "dist/index.css",
