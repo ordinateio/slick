@@ -8,4 +8,4 @@ import {Slick} from '../../src';
 let slick = new Slick();
 
 slick.slider('.slider');
-slick.carousel('.carousel', {dots: true});
+slick.carousel('.carousel');
